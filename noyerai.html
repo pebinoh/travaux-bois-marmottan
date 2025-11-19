@@ -7,80 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Retour Accueil</a></li>
+        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
     <section class="project-header fade-in">
         <div class="container">
             <h1>Reprise en Sous-Œuvre</h1>
-            <p class="project-intro">Une intervention chirurgicale sur une structure existante pour remplacer des éléments vitaux sans déstabiliser le bâtiment.</p>
+            <p class="project-intro">Une intervention chirurgicale sur une structure existante.</p>
         </div>
     </section>
 
     <section class="container">
         <div class="detail-gallery">
-            
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="noyerai_2.jpg" alt="Entrait pourri">
-                </div>
-                <div class="detail-text">
-                    <h3>Diagnostic : Entrait dégradé</h3>
-                    <p>L'entrait d'origine présentait des signes avancés de pourrissement dû à des infiltrations anciennes. Une reprise en sous-œuvre était nécessaire pour sauver la structure du toit.</p>
-                </div>
+                <div class="detail-image"><img src="noyerai_2.jpg" alt="Entrait pourri"></div>
+                <div class="detail-text"><h3>Diagnostic : Entrait dégradé</h3><p>L'entrait d'origine présentait des signes avancés de pourrissement.</p></div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="noyerai_3.jpg" alt="Nouvelle pièce">
-                </div>
-                <div class="detail-text">
-                    <h3>Remplacement structurel</h3>
-                    <p>Après étaiement complet, nous avons procédé à la substitution de la pièce défectueuse par une nouvelle poutre en bois massif de forte section, taillée sur mesure en atelier.</p>
-                </div>
+                <div class="detail-image"><img src="noyerai_3.jpg" alt="Nouvelle pièce"></div>
+                <div class="detail-text"><h3>Remplacement structurel</h3><p>Substitution de la pièce défectueuse par une nouvelle poutre en bois massif.</p></div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="noyerai_5.jpg" alt="Pose fenêtres">
-                </div>
-                <div class="detail-text">
-                    <h3>Pose des menuiseries</h3>
-                    <p>Une fois la structure sécurisée, nous avons intégré les nouvelles menuiseries isolantes, s'adaptant parfaitement aux ouvertures existantes.</p>
-                </div>
+                <div class="detail-image"><img src="noyerai_5.jpg" alt="Pose fenêtres"></div>
+                <div class="detail-text"><h3>Pose des menuiseries</h3><p>Intégration des nouvelles menuiseries isolantes.</p></div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="noyerai_4.jpg" alt="Grue et palonnier">
-                </div>
-                <div class="detail-text">
-                    <h3>Moyens de levage spécifiques</h3>
-                    <p>Utilisation d'une grue mobile équipée d'un palonnier à ventouses. Cette technique permet de manipuler les vitrages lourds avec une précision millimétrique, même à grande hauteur.</p>
-                </div>
+                <div class="detail-image"><img src="noyerai_4.jpg" alt="Grue et palonnier"></div>
+                <div class="detail-text"><h3>Moyens de levage</h3><p>Utilisation d'une grue mobile équipée d'un palonnier à ventouses.</p></div>
             </div>
-
         </div>
-        <div style="text-align:center;">
-            <a href="index.html#projets" class="back-btn">← Retour aux réalisations</a>
-        </div>
+        <div style="text-align:center;"><a href="index.html#projets" class="back-btn">← Retour aux réalisations</a></div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TBM - Travaux Bois Marmottan.</p>
-    </footer>
-
+    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
