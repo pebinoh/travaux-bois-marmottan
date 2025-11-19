@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBM - Travaux Bois Marmottan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TBM</div>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">Savoir-faire</a></li>
+            <li><a href="#projets">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="accueil" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Travaux Bois Marmottan</h1>
+            <p>Menuiserie & Charpente en milieu montagnard</p>
+            <a href="#apropos" class="btn-scroll">Découvrir</a>
+        </div>
+    </header>
+
+    <section id="apropos" class="container section-padding">
+        <div class="content-text fade-in">
+            <h2>L'Exigence de la Montagne</h2>
+            <p>Spécialisé dans les chantiers à accès restreints et la rénovation d'altitude.</p>
+            <p>TBM allie techniques traditionnelles et logistique de pointe pour intervenir là où les autres s'arrêtent. De la charpente structurelle aux finitions de menuiserie fine, nous façonnons le bois pour qu'il résiste aux éléments.</p>
+        </div>
+    </section>
+
+    <section id="projets" class="section-gray section-padding">
+        <div class="container">
+            <h2>Nos Réalisations</h2>
+            <div class="gallery-grid">
+                
+                <div class="project-card fade-in" onclick="openModal('modal1')">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chalet Altitude">
+                    <div class="overlay">
+                        <h3>Rénovation Chalet 2000m</h3>
+                        <p>Voir le projet</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in" onclick="openModal('modal2')">
+                    <img src="https://images.unsplash.com/photo-1516876585771-299c38a4467e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Toiture Bardage">
+                    <div class="overlay">
+                        <h3>Refection Toiture Complète</h3>
+                        <p>Voir le projet</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in" onclick="openModal('modal3')">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Menuiserie Intérieure">
+                    <div class="overlay">
+                        <h3>Aménagement Intérieur</h3>
+                        <p>Voir le projet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Rénovation Chalet 2000m</h2>
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Détail">
+            <p><strong>Lieu :</strong> Val d'Isère<br><strong>Défi :</strong> Accès héliporté uniquement.<br><strong>Description :</strong> Remplacement complet de la charpente en mélèze local, isolation par l'extérieur et bardage vieux bois.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Refection Toiture</h2>
+            <img src="https://images.unsplash.com/photo-1516876585771-299c38a4467e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Détail">
+            <p>Description détaillée du projet de toiture ici...</p>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Aménagement Intérieur</h2>
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Détail">
+            <p>Description détaillée de la menuiserie intérieure...</p>
+        </div>
+    </div>
+
+    <section id="contact" class="container section-padding">
+        <div class="content-text fade-in">
+            <h2>Contactez TBM</h2>
+            <p>Une question sur un projet ? Un devis ?</p>
+            
+            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="contact-form">
+                <input type="text" name="nom" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre Email" required>
+                <input type="text" name="sujet" placeholder="Sujet (ex: Rénovation Chamonix)" required>
+                <textarea name="message" rows="5" placeholder="Détails de votre projet..." required></textarea>
+                <button type="submit">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TBM - Travaux Bois Marmottan. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
