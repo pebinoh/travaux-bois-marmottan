@@ -41,8 +41,8 @@ nav {
 
 /* Style du Logo - AGRANDI */
 .logo img {
-    height: 110px;        /* Agrandissement (était 80px) */
-    width: 110px;         /* Agrandissement */
+    height: 130px;        /* Agrandissement (était 80px) */
+    width: 130px;         /* Agrandissement */
     border-radius: 50%;   /* Cercle parfait */
     object-fit: cover;
     border: 3px solid var(--wood); /* Bordure un peu plus épaisse */
