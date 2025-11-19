@@ -1,14 +1,16 @@
 /* Reset et Variables */
 :root {
-    --primary: #2c3e50; /* Bleu nuit/Gris foncé */
-    --accent: #c0392b; /* Rouge montagne discret ou ocre */
-    --wood: #8d6e63; /* Couleur bois */
+    --primary: #2c3e50;
+    --accent: #c0392b;
+    --wood: #8d6e63;
     --light: #f4f4f4;
     --font-main: 'Montserrat', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-main);
@@ -31,7 +33,7 @@ nav {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 2px; }
+.logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 2px; cursor: pointer; }
 .nav-links { list-style: none; display: flex; gap: 30px; }
 .nav-links a { text-decoration: none; color: #333; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
 .nav-links a:hover { color: var(--wood); }
@@ -39,9 +41,9 @@ nav {
 /* Hero Section avec Parallaxe */
 .hero {
     height: 100vh;
-    /* Image de fond style montagne - MAZURE.JPG */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('mazure.jpg'); /* <-- Image Mazure ici */
-    background-attachment: fixed; /* C'est ça qui fait l'effet parallaxe */
+    /* IMAGE MAZURE ICI */
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('mazure.jpg');
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -51,8 +53,8 @@ nav {
     color: white;
 }
 
-.hero h1 { font-family: var(--font-title); font-size: 4rem; margin-bottom: 20px; }
-.hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; }
+.hero h1 { font-family: var(--font-title); font-size: 4rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 .btn-scroll { border: 2px solid white; padding: 10px 30px; color: white; text-decoration: none; text-transform: uppercase; transition: 0.3s; }
 .btn-scroll:hover { background: white; color: black; }
 
@@ -63,7 +65,7 @@ nav {
 h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
 .content-text { max-width: 800px; margin: 0 auto; text-align: center; }
 
-/* Galerie de Projets */
+/* Galerie de Projets (Accueil) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -72,104 +74,84 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
 
 .project-card {
     position: relative;
+    display: block; /* Important pour le lien */
     cursor: pointer;
     overflow: hidden;
-    height: 300px;
+    height: 350px;
 }
 
 .project-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-.project-card:hover img { transform: scale(1.1); }
+.project-card:hover img { transform: scale(1.05); }
 
 .overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .project-card:hover .overlay { opacity: 1; }
 
-/* Animation Fade In au défilement */
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+/* PAGES PROJETS DÉTAILLÉES */
+.project-header {
+    padding-top: 150px; /* Espace pour la navbar */
+    padding-bottom: 50px;
+    text-align: center;
+    background: var(--light);
+}
+.project-header h1 { font-family: var(--font-title); font-size: 3rem; margin-bottom: 20px; }
+.project-intro { max-width: 800px; margin: 0 auto 50px auto; font-size: 1.1rem; color: #555; }
+
+.detail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Alterne l'ordre image/texte */
+.detail-item:nth-child(even) { direction: rtl; }
+.detail-item:nth-child(even) .detail-text { direction: ltr; }
+
+.detail-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.detail-text h3 { font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
+
+/* Animation Fade In */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* Modales (Pop-up) */
-.modal {
-    display: none; 
-    position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    overflow: auto;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%; /* Un peu plus large pour les modales avec galerie */
-    max-width: 900px;
-    position: relative;
-    border-radius: 8px;
-}
-
-.modal-content h2 { text-align: left; margin-top: 0; font-size: 2rem; }
-.modal-content > img { width: 100%; height: auto; margin-bottom: 20px; object-fit: cover; max-height: 400px;} /* Image principale de la modale */
-.modal-content p { margin-bottom: 15px; }
-
-.modal-gallery {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr; /* Une seule colonne par défaut */
-    gap: 20px;
-}
-.modal-gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-@media (min-width: 768px) { /* Deux colonnes pour la galerie sur grand écran */
-    .modal-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
-.close:hover { color: black; }
-
 /* Formulaire */
-.contact-form {
-    display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 30px auto;
-}
-input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); border-radius: 5px; }
-button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; border-radius: 5px; }
+.contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 30px auto; }
+input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); border-radius: 0; }
+button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
 button:hover { background: var(--primary); }
 
 /* Footer */
-footer { background: var(--primary); color: white; text-align: center; padding: 20px; }
+footer { background: var(--primary); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+.back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--wood); font-weight: bold; border-bottom: 1px solid var(--wood); }
 
 /* Responsive */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
-    nav { padding: 15px 20px; }
-    .nav-links { display: none; } /* Pour simplifier, le menu est caché sur mobile ici, il faudrait ajouter un burger menu */
-    .modal-content {
-        width: 95%;
-        margin: 20px auto;
-    }
-    .modal-gallery {
-        grid-template-columns: 1fr; /* S'assure que sur mobile c'est toujours 1 colonne */
-    }
+    .nav-links { display: none; }
+    .detail-item { grid-template-columns: 1fr; direction: ltr !important; } /* Empile sur mobile */
 }
