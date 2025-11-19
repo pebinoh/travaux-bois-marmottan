@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -16,61 +18,56 @@
                 <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
             </a>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Retour Accueil</a></li>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
     <section class="project-header fade-in">
         <div class="container">
             <h1>Restauration de Ferme & Auvent</h1>
-            <p class="project-intro">Un projet complet alliant respect du patrimoine et création sur mesure. Notre mission : redonner vie à cette ferme d'alpage en conservant son âme.</p>
+            <p class="project-intro">Un projet complet alliant respect du patrimoine et création sur mesure.</p>
         </div>
     </section>
 
     <section class="container">
         <div class="detail-gallery">
-            
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="baptieu_1.jpg" alt="Structure ferme">
-                </div>
+                <div class="detail-image"><img src="baptieu_1.jpg" alt="Structure ferme"></div>
                 <div class="detail-text">
                     <h3>Restauration de la structure</h3>
-                    <p>Nous avons commencé par une analyse structurelle complète. Le bois d'origine a été nettoyé et traité. Les pièces trop endommagées ont été remplacées par du bois local, taillé à la main pour respecter l'esthétique d'époque.</p>
+                    <p>Nous avons commencé par une analyse structurelle complète. Le bois d'origine a été nettoyé et traité.</p>
                 </div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="baptieu_2.jpg" alt="Auvent sur mesure">
-                </div>
+                <div class="detail-image"><img src="baptieu_2.jpg" alt="Auvent sur mesure"></div>
                 <div class="detail-text">
                     <h3>Création d'un auvent</h3>
-                    <p>Conception et levage d'un auvent traditionnel. Ce volume supplémentaire permet de protéger la façade tout en créant un espace de vie extérieur abrité, essentiel en montagne.</p>
+                    <p>Conception et levage d'un auvent traditionnel pour protéger la façade.</p>
                 </div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="baptieu_3.jpg" alt="Résultat final ferme">
-                </div>
+                <div class="detail-image"><img src="baptieu_3.jpg" alt="Résultat final ferme"></div>
                 <div class="detail-text">
                     <h3>Résultat Final</h3>
-                    <p>Le projet terminé révèle une harmonie retrouvée entre l'ancien et le neuf. La ferme a retrouvé sa solidité structurelle et l'auvent s'intègre parfaitement à la ligne du toit.</p>
+                    <p>Le projet terminé révèle une harmonie retrouvée entre l'ancien et le neuf.</p>
                 </div>
             </div>
-
         </div>
         <div style="text-align:center;">
             <a href="index.html#projets" class="back-btn">← Retour aux réalisations</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TBM - Travaux Bois Marmottan.</p>
-    </footer>
-
+    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
