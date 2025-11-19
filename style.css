@@ -39,8 +39,8 @@ nav {
 /* Hero Section avec Parallaxe */
 .hero {
     height: 100vh;
-    /* Image de fond style montagne */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    /* Image de fond style montagne - MAZURE.JPG */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('mazure.jpg'); /* <-- Image Mazure ici */
     background-attachment: fixed; /* C'est ça qui fait l'effet parallaxe */
     background-position: center;
     background-size: cover;
@@ -118,12 +118,34 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
+    width: 90%; /* Un peu plus large pour les modales avec galerie */
+    max-width: 900px;
     position: relative;
+    border-radius: 8px;
 }
 
-.modal-content img { width: 100%; height: auto; margin-bottom: 20px; }
+.modal-content h2 { text-align: left; margin-top: 0; font-size: 2rem; }
+.modal-content > img { width: 100%; height: auto; margin-bottom: 20px; object-fit: cover; max-height: 400px;} /* Image principale de la modale */
+.modal-content p { margin-bottom: 15px; }
+
+.modal-gallery {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne par défaut */
+    gap: 20px;
+}
+.modal-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) { /* Deux colonnes pour la galerie sur grand écran */
+    .modal-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .close:hover { color: black; }
 
@@ -131,8 +153,8 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
 .contact-form {
     display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 30px auto;
 }
-input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); }
-button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); border-radius: 5px; }
+button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; border-radius: 5px; }
 button:hover { background: var(--primary); }
 
 /* Footer */
@@ -141,5 +163,13 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
 /* Responsive */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
+    nav { padding: 15px 20px; }
     .nav-links { display: none; } /* Pour simplifier, le menu est caché sur mobile ici, il faudrait ajouter un burger menu */
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+    .modal-gallery {
+        grid-template-columns: 1fr; /* S'assure que sur mobile c'est toujours 1 colonne */
+    }
 }
