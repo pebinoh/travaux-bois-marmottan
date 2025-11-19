@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Animation d'apparition au scroll
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -17,3 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
 });
+
+// GESTION DU MENU MOBILE
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+}
