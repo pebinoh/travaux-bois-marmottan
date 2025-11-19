@@ -7,58 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Retour Accueil</a></li>
+        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
     <section class="project-header fade-in">
         <div class="container">
             <h1>Sciage à Façon & Bois Local</h1>
-            <p class="project-intro">TBM propose un service de sciage pour les particuliers et professionnels. Valorisez votre bois ou profitez de notre stock d'essences locales.</p>
+            <p class="project-intro">TBM propose un service de sciage pour valoriser votre bois.</p>
         </div>
     </section>
 
     <section class="container">
         <div class="detail-gallery">
-            
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="scierie.jpg" alt="Installation de sciage">
-                </div>
+                <div class="detail-image"><img src="scierie.jpg" alt="Installation de sciage"></div>
                 <div class="detail-text">
-                    <h3>Débit sur mesure</h3>
-                    <p>Nous disposons de l'équipement nécessaire pour débiter des grumes selon vos spécifications exactes (poutres, chevrons, avivés). C'est la solution idéale pour la rénovation où les sections standards du commerce ne conviennent pas toujours.</p>
+                    <h3>Débit sur mesure</h3><p>Nous disposons de l'équipement nécessaire pour débiter des grumes selon vos spécifications.</p>
                     <br>
-                    <h3>Essences de Montagne</h3>
-                    <p>Nous travaillons principalement le Mélèze et l'Épicéa de pays. Ces bois, ayant poussé lentement en altitude, offrent une densité et une résistance mécanique supérieures, parfaites pour la construction durable.</p>
+                    <h3>Essences de Montagne</h3><p>Nous travaillons principalement le Mélèze et l'Épicéa de pays.</p>
                 </div>
             </div>
-
         </div>
-        
         <div style="text-align:center; margin-top: 50px;">
-            <h3>Vous avez du bois à scier ?</h3>
-            <br>
-            <a href="index.html#contact" class="btn-scroll" style="background:var(--wood); border:none;">Demander un devis sciage</a>
+            <a href="index.html#contact" class="btn-scroll" style="background:var(--wood); border:none;">Demander un devis</a>
             <br><br>
             <a href="index.html#services" class="back-btn">← Retour aux services</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TBM - Travaux Bois Marmottan.</p>
-    </footer>
-
+    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
