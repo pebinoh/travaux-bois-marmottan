@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Localisation - TBM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="contact.html" class="active" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-header fade-in">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p class="project-intro">Une question sur un projet de rénovation ou de construction ? N'hésitez pas à nous écrire ou à nous rendre visite à l'atelier.</p>
+        </div>
+    </section>
+
+    <section class="container section-padding">
+        <div class="contact-layout">
+            
+            <div class="contact-info fade-in">
+                <div class="info-box">
+                    <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
+                    <p><strong>TBM - Travaux Bois Marmottan</strong><br>
+                    La Savinaz<br>
+                    73640 Villaroger<br>
+                    Savoie, France</p>
+                </div>
+
+                <div class="info-box">
+                    <h3><i class="fas fa-phone"></i> Téléphone</h3>
+                    <p>06 XX XX XX XX</p> </div>
+
+                <div class="info-box">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>contact@tbm-bois.com</p> </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps?q=La+Savinaz,+73640+Villaroger&output=embed" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper fade-in">
+                <h3>Envoyez-nous un message</h3>
+                <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="contact-form">
+                    <label>Votre Nom</label>
+                    <input type="text" name="nom" placeholder="Ex: Jean Dupont" required>
+                    
+                    <label>Votre Email</label>
+                    <input type="email" name="email" placeholder="email@exemple.com" required>
+                    
+                    <label>Sujet</label>
+                    <input type="text" name="sujet" placeholder="Ex: Devis Rénovation Chalet" required>
+                    
+                    <label>Message</label>
+                    <textarea name="message" rows="6" placeholder="Décrivez votre projet..." required></textarea>
+                    
+                    <button type="submit">Envoyer la demande</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
