@@ -24,3 +24,14 @@ function toggleMenu() {
     const navLinks = document.getElementById("navLinks");
     navLinks.classList.toggle("active");
 }
+
+// GESTION DU LOADER (ÉCRAN DE CHARGEMENT)
+window.addEventListener("load", function() {
+    const loader = document.getElementById("loader");
+    // Si le loader existe, on le cache après 1.5 secondes
+    if (loader) {
+        setTimeout(function() {
+            loader.classList.add("loader-hidden");
+        }, 1500);
+    }
+});
