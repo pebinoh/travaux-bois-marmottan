@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TBM - Travaux Bois Marmottan</title>
+    <title>Charpentier Menuisier Savoie | TBM - Travaux Bois Marmottan</title>
+    <meta name="description" content="TBM est une entreprise de menuiserie et charpente basée à Sainte-Foy-Tarentaise (73). Spécialiste rénovation chalet, sciage sur mesure et travaux d'accès difficile.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -18,11 +19,16 @@
                 <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
             </a>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html#accueil">Accueil</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#projets">Réalisations</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#accueil" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
@@ -38,7 +44,7 @@
         <div class="content-text fade-in">
             <h2>L'Exigence de la Montagne</h2>
             <p>Spécialisé dans les chantiers à accès restreints et la rénovation d'altitude.</p>
-            <p>TBM allie techniques traditionnelles et logistique de pointe pour intervenir là où les autres s'arrêtent.</p>
+            <p>TBM allie techniques traditionnelles et logistique de pointe pour intervenir là où les autres s'arrêtent (Sainte-Foy, Val d'Isère, Tignes).</p>
         </div>
     </section>
 
@@ -48,20 +54,16 @@
             <div class="services-grid">
                 
                 <a href="sciage.html" class="service-card fade-in">
-                    <div class="icon-box">
-                        <i class="fas fa-tree"></i>
-                    </div>
+                    <div class="icon-box"><i class="fas fa-tree"></i></div>
                     <h3>Sciage à façon</h3>
-                    <p>Débit sur mesure, poutres & planches. Valorisation du bois local (Mélèze, Sapin).</p>
+                    <p>Débit sur mesure, poutres & planches. Valorisation du bois local.</p>
                     <span class="link-text">En savoir plus &rarr;</span>
                 </a>
 
                 <a href="atelier.html" class="service-card fade-in">
-                    <div class="icon-box">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                    <div class="icon-box"><i class="fas fa-tools"></i></div>
                     <h3>Fabrication Atelier</h3>
-                    <p>Menuiseries, escaliers, balcons, terasses sur mesure fabriqués chez nous.</p>
+                    <p>Menuiserie d'agencement, escaliers et meubles sur mesure.</p>
                     <span class="link-text">En savoir plus &rarr;</span>
                 </a>
 
@@ -119,7 +121,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 TBM - Travaux Bois Marmottan - Tous droits réservés </p>
+        <p>&copy; 2025 TBM - Travaux Bois Marmottan. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
