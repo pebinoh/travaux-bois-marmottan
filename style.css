@@ -19,51 +19,62 @@ body {
     font-family: var(--font-main);
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* Évite le scroll horizontal accidentel */
+    overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVIGATION & LOGO
+   2. NAVIGATION & LOGO (CORRIGÉ)
    ========================================= */
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px; /* Un peu moins de padding vertical pour le logo */
+    justify-content: space-between; /* Sépare le logo (gauche) des liens (droite) */
+    align-items: center; /* Centre verticalement */
+    padding: 15px 50px;
     background: white;
     position: fixed;
     width: 100%;
+    height: 130px; /* On fixe une hauteur pour accommoder le gros logo */
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Style Spécifique pour le Logo Rond */
+/* Style du Logo - AGRANDI */
 .logo img {
-    height: 80px;         /* Taille du logo */
-    width: 80px;          /* Largeur égale pour un cercle parfait */
-    border-radius: 50%;   /* Rogne l'image en rond */
-    object-fit: cover;    /* S'assure que l'image remplit le rond sans être écrasée */
-    border: 2px solid var(--wood); /* Petite bordure esthétique */
+    height: 110px;        /* Agrandissement (était 80px) */
+    width: 110px;         /* Agrandissement */
+    border-radius: 50%;   /* Cercle parfait */
+    object-fit: cover;
+    border: 3px solid var(--wood); /* Bordure un peu plus épaisse */
     transition: transform 0.3s ease;
-    display: block;       /* Enlève les espaces indésirables sous l'image */
+    display: block;
 }
 
 .logo img:hover {
-    transform: scale(1.1); /* Effet zoom au survol */
+    transform: scale(1.1); /* Zoom au survol */
 }
 
-.nav-links { 
-    list-style: none; 
-    display: flex; 
+/* Style des Liens - FORCÉ À L'HORIZONTALE */
+ul.nav-links { 
+    display: flex !important;       /* !important force l'affichage flexible */
+    flex-direction: row;            /* Force la ligne horizontale */
+    align-items: center;
     gap: 30px; 
+    list-style: none !important;    /* Enlève les points (puces) */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block; /* Sécurité supplémentaire */
 }
 
 .nav-links a { 
     text-decoration: none; 
     color: #333; 
     text-transform: uppercase; 
-    font-size: 0.9rem; 
+    font-size: 1rem; /* Un peu plus gros pour équilibrer avec le logo */
+    font-weight: 600;
     letter-spacing: 1px; 
     transition: 0.3s; 
 }
@@ -77,9 +88,9 @@ nav {
    ========================================= */
 .hero {
     height: 100vh;
-    /* Image de fond MAZURE */
+    /* Image de fond */
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('mazure.jpg');
-    background-attachment: fixed; /* Effet Parallaxe */
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -150,7 +161,7 @@ h2 {
     background: white;
     padding: 40px;
     text-align: center;
-    text-decoration: none; /* Enlève le soulignement du lien global */
+    text-decoration: none;
     color: #333;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -162,7 +173,7 @@ h2 {
 }
 
 .service-card:hover {
-    transform: translateY(-10px); /* La carte monte un peu */
+    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-color: var(--wood);
 }
@@ -191,11 +202,11 @@ h2 {
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
-    margin-top: auto; /* Pousse le texte vers le bas */
+    margin-top: auto;
 }
 
 /* =========================================
-   6. GALERIE PROJETS (Accueil)
+   6. GALERIE PROJETS
    ========================================= */
 .gallery-grid {
     display: grid;
@@ -236,10 +247,10 @@ h2 {
 .project-card:hover .overlay { opacity: 1; }
 
 /* =========================================
-   7. PAGES DÉTAILLÉES (Projets & Services)
+   7. PAGES DÉTAILLÉES
    ========================================= */
 .project-header {
-    padding-top: 150px;
+    padding-top: 180px; /* Augmenté car la nav est plus haute */
     padding-bottom: 50px;
     text-align: center;
     background: var(--light);
@@ -272,7 +283,6 @@ h2 {
     align-items: center;
 }
 
-/* Alterne l'ordre image/texte (Zig-Zag) */
 .detail-item:nth-child(even) { direction: rtl; }
 .detail-item:nth-child(even) .detail-text { direction: ltr; }
 
@@ -353,11 +363,10 @@ footer {
    ========================================= */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
-    nav { padding: 10px 20px; }
-    .nav-links { display: none; } /* Cache le menu texte sur mobile */
+    nav { padding: 10px 20px; height: 100px; }
+    .nav-links { display: none !important; } /* Cache le menu sur mobile */
     
-    /* Empile les détails au lieu de les mettre côte à côte */
     .detail-item { grid-template-columns: 1fr; direction: ltr !important; }
     
-    .logo img { height: 60px; width: 60px; } /* Logo plus petit sur mobile */
+    .logo img { height: 80px; width: 80px; } /* Logo plus petit sur mobile */
 }
