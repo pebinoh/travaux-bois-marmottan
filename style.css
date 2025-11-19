@@ -8,7 +8,7 @@
     --light: #f4f4f4;      /* Gris très clair */
     --white: #ffffff;
     
-    /* POLICES STYLE "ATELIER" (Montserrat + Playfair) */
+    /* POLICES STYLE "ATELIER" */
     --font-main: 'Montserrat', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
@@ -196,34 +196,36 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
    =========================================================== */
 @media (max-width: 768px) {
     
-    /* 1. Navigation Mobile */
+    /* 1. AJOUT DE MARGES SUR LES COTÉS POUR TOUTES LES PAGES */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 2. Navigation Mobile */
     nav { padding: 0 20px; }
     
     .hamburger { 
-        display: block; /* On AFFICHE le bouton burger */ 
+        display: block; 
     }
 
-    /* On transforme le menu horizontal en menu vertical caché */
     .nav-links {
         position: absolute;
         top: 80px;
         left: 0;
         width: 100%;
         background-color: white;
-        flex-direction: column; /* Liste verticale */
+        flex-direction: column; 
         align-items: center;
         gap: 0;
         border-top: 1px solid #eee;
-        max-height: 0; /* Caché par défaut */
+        max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
         box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     }
 
-    /* Classe ajoutée par JS pour ouvrir le menu */
-    .nav-links.active {
-        max-height: 350px;
-    }
+    .nav-links.active { max-height: 350px; }
 
     .nav-links li {
         width: 100%;
@@ -232,20 +234,20 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
         border-bottom: 1px solid #f4f4f4;
     }
 
-    /* 2. Correction Image Hero (Zoom Bug) */
+    /* 3. Correction Image Hero (Zoom Bug) */
     .hero {
-        background-attachment: scroll; /* Enlève le parallaxe sur mobile */
+        background-attachment: scroll;
         background-position: center; 
     }
     
     .hero h1 { font-size: 2.2rem; padding: 0 10px; }
     .hero p { font-size: 1rem; padding: 0 15px; }
 
-    /* 3. Ajustements Généraux */
+    /* 4. Ajustements Généraux */
     h2 { font-size: 2rem; }
-    .section-padding { padding: 50px 20px; }
+    .section-padding { padding: 50px 20px; } /* Le padding est géré par .container maintenant, mais on garde ça pour le vertical */
 
-    /* 4. Empiler les textes/images des projets */
+    /* 5. Empiler les textes/images des projets proprement */
     .detail-item { 
         grid-template-columns: 1fr; 
         gap: 30px;
