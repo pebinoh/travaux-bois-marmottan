@@ -7,73 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Retour Accueil</a></li>
+        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="index.html#projets" onclick="toggleMenu()">Réalisations</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
     <section class="project-header fade-in">
         <div class="container">
             <h1>Fabrication Atelier</h1>
-            <p class="project-intro">L'âme de notre entreprise réside dans notre atelier. C'est ici que nous transformons la matière brute en ouvrages d'exception, de la charpente traditionnelle au mobilier fin.</p>
+            <p class="project-intro">De la charpente traditionnelle au mobilier fin.</p>
         </div>
     </section>
 
     <section class="container">
         <div class="detail-gallery">
-            
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="atelier_1.jpg" alt="Travail en atelier">
-                </div>
-                <div class="detail-text">
-                    <h3>Savoir-faire Artisanal</h3>
-                    <p>Dans notre atelier, chaque pièce est travaillée avec précision. Nous allions les techniques d'assemblage traditionnelles aux outils modernes pour garantir solidité et esthétique. Que ce soit pour tailler une charpente ou assembler un meuble, la rigueur est la même.</p>
-                </div>
+                <div class="detail-image"><img src="atelier_1.jpg" alt="Travail en atelier"></div>
+                <div class="detail-text"><h3>Savoir-faire Artisanal</h3><p>Chaque pièce est travaillée avec précision dans notre atelier.</p></div>
             </div>
-
             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="atelier_2.jpg" alt="Menuiserie sur mesure">
-                </div>
-                <div class="detail-text">
-                    <h3>Agencement Intérieur</h3>
-                    <p>Nous réalisons tout type d'aménagement : cuisines, dressings, bibliothèques ou habillages muraux. Nous travaillons les essences locales pour apporter la chaleur du bois dans vos intérieurs, tout en respectant vos contraintes d'espace.</p>
-                </div>
+                <div class="detail-image"><img src="atelier_2.jpg" alt="Menuiserie sur mesure"></div>
+                <div class="detail-text"><h3>Agencement Intérieur</h3><p>Cuisines, dressings, bibliothèques sur mesure.</p></div>
             </div>
-
-             <div class="detail-item fade-in">
-                <div class="detail-image">
-                    <img src="atelier_3.jpg" alt="Escalier et finition">
-                </div>
-                <div class="detail-text">
-                    <h3>Escaliers & Portes</h3>
-                    <p>Création d'escaliers sur mesure (droits, tournants, suspendus) et de portes massives. Nous portons une attention particulière aux finitions (brossage, huilage) pour révéler le caractère du bois.</p>
-                </div>
+            <div class="detail-item fade-in">
+                <div class="detail-image"><img src="atelier_3.jpg" alt="Escalier et finition"></div>
+                <div class="detail-text"><h3>Escaliers & Portes</h3><p>Création d'escaliers et de portes massives.</p></div>
             </div>
-
         </div>
-        
         <div style="text-align:center; margin-top: 50px;">
-            <a href="index.html#contact" class="btn-scroll" style="background:var(--wood); border:none;">Parler de mon projet atelier</a>
+            <a href="index.html#contact" class="btn-scroll" style="background:var(--wood); border:none;">Parler de mon projet</a>
             <br><br>
             <a href="index.html#services" class="back-btn">← Retour aux services</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TBM - Travaux Bois Marmottan.</p>
-    </footer>
-
+    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
     <script src="script.js"></script>
 </body>
 </html>
