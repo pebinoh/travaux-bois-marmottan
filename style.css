@@ -4,12 +4,12 @@
     --accent: #c0392b;
     --wood: #8d6e63;
     --light: #f4f4f4;
+    --white: #ffffff;
     --font-main: 'Montserrat', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -32,13 +32,12 @@ nav {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
 .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 2px; cursor: pointer; }
 .nav-links { list-style: none; display: flex; gap: 30px; }
 .nav-links a { text-decoration: none; color: #333; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
 .nav-links a:hover { color: var(--wood); }
 
-/* Hero Section avec Parallaxe */
+/* Hero Section */
 .hero {
     height: 100vh;
     /* IMAGE MAZURE ICI */
@@ -52,7 +51,6 @@ nav {
     text-align: center;
     color: white;
 }
-
 .hero h1 { font-family: var(--font-title); font-size: 4rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 .hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 .btn-scroll { border: 2px solid white; padding: 10px 30px; color: white; text-decoration: none; text-transform: uppercase; transition: 0.3s; }
@@ -65,30 +63,76 @@ nav {
 h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
 .content-text { max-width: 800px; margin: 0 auto; text-align: center; }
 
+/* NOUVEAU STYLE : Service Cards (Sans images de fond) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--wood);
+}
+
+.icon-box {
+    font-size: 3rem;
+    color: var(--wood);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.link-text {
+    color: var(--wood);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
 /* Galerie de Projets (Accueil) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-
 .project-card {
     position: relative;
-    display: block; /* Important pour le lien */
+    display: block;
     cursor: pointer;
     overflow: hidden;
     height: 350px;
 }
-
 .project-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
-
 .project-card:hover img { transform: scale(1.05); }
-
 .overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -101,12 +145,11 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
     opacity: 0;
     transition: 0.4s;
 }
-
 .project-card:hover .overlay { opacity: 1; }
 
-/* PAGES PROJETS DÉTAILLÉES */
+/* PAGES DÉTAILLÉES */
 .project-header {
-    padding-top: 150px; /* Espace pour la navbar */
+    padding-top: 150px;
     padding-bottom: 50px;
     text-align: center;
     background: var(--light);
@@ -128,7 +171,6 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
     align-items: center;
 }
 
-/* Alterne l'ordre image/texte */
 .detail-item:nth-child(even) { direction: rtl; }
 .detail-item:nth-child(even) .detail-text { direction: ltr; }
 
@@ -153,5 +195,5 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .nav-links { display: none; }
-    .detail-item { grid-template-columns: 1fr; direction: ltr !important; } /* Empile sur mobile */
+    .detail-item { grid-template-columns: 1fr; direction: ltr !important; }
 }
