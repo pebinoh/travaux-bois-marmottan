@@ -5,10 +5,12 @@
     --primary: #2c3e50;    /* Bleu nuit/Gris foncé */
     --accent: #c0392b;     /* Rouge discret */
     --wood: #8d6e63;       /* Couleur Bois (Maron glacé) */
-    --light: #f4f4f4;      /* Gris très clair */
+    --light: #f8f9fa;      /* Blanc cassé très léger (plus moderne que le gris) */
     --white: #ffffff;
-    --font-main: 'Montserrat', sans-serif;
-    --font-title: 'Playfair Display', serif;
+    
+    /* NOUVELLES POLICES MODERNES */
+    --font-main: 'Lato', sans-serif;   /* Pour le texte courant */
+    --font-title: 'Jost', sans-serif;  /* Pour les titres (Géométrique) */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,41 +19,43 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-main);
-    color: #333;
-    line-height: 1.6;
+    color: #4a4a4a; /* Gris foncé au lieu de noir pur (plus doux) */
+    line-height: 1.7; /* Plus d'espace entre les lignes */
+    font-weight: 300; /* Texte plus fin par défaut */
     overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVIGATION & LOGO (VERSION FINE)
+   2. NAVIGATION & LOGO (FINE & MODERNE)
    ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;      /* Padding réduit */
-    background: white;
+    padding: 0 50px;
+    background: rgba(255, 255, 255, 0.98); /* Légère transparence moderne */
     position: fixed;
     width: 100%;
-    height: 80px;         /* <--- HAUTEUR RÉDUITE ICI (C'était 130px) */
+    height: 80px;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.03); /* Ombre très subtile */
+    backdrop-filter: blur(5px); /* Effet de flou derrière le menu */
 }
 
-/* Style du Logo - RÉDUIT POUR ENTRER DANS LE BANDEAU */
+/* Style du Logo */
 .logo img {
-    height: 60px;         /* <--- TAILLE RÉDUITE (C'était 110px) */
-    width: 60px;          /* <--- TAILLE RÉDUITE */
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--wood); /* Bordure plus fine */
-    transition: transform 0.3s ease;
+    border: 1px solid var(--wood); /* Bordure fine et élégante */
+    transition: transform 0.5s ease;
     display: block;
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+    transform: rotate(10deg); /* Petite rotation moderne au survol */
 }
 
 /* Style des Liens */
@@ -59,7 +63,7 @@ ul.nav-links {
     display: flex !important;
     flex-direction: row;
     align-items: center;
-    gap: 30px; 
+    gap: 40px; /* Plus d'espace entre les liens */
     list-style: none !important;
     margin: 0;
     padding: 0;
@@ -70,10 +74,11 @@ ul.nav-links {
 .nav-links a { 
     text-decoration: none; 
     color: #333; 
+    font-family: var(--font-title); /* Utilise la police titre pour le menu */
     text-transform: uppercase; 
-    font-size: 0.85rem;   /* Police un peu plus fine et élégante */
-    font-weight: 600;
-    letter-spacing: 1px; 
+    font-size: 0.8rem; 
+    font-weight: 500;
+    letter-spacing: 2px; /* Espacement des lettres (très chic) */
     transition: 0.3s; 
 }
 
@@ -84,7 +89,7 @@ ul.nav-links {
    ========================================= */
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('mazure.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('mazure.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -97,100 +102,128 @@ ul.nav-links {
 
 .hero h1 { 
     font-family: var(--font-title); 
-    font-size: 4rem; 
+    font-size: 4.5rem; /* Titre plus grand et fin */
+    font-weight: 300;  /* Graisse fine */
     margin-bottom: 20px; 
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Grand espacement style magazine */
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3); 
 }
 
 .hero p { 
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     font-weight: 300; 
-    margin-bottom: 40px; 
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+    margin-bottom: 50px; 
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3); 
 }
 
 .btn-scroll { 
-    border: 2px solid white; 
-    padding: 10px 30px; 
+    border: 1px solid white; /* Bordure plus fine */
+    padding: 15px 40px; 
     color: white; 
+    background: transparent;
+    font-family: var(--font-title);
     text-decoration: none; 
     text-transform: uppercase; 
-    transition: 0.3s; 
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.4s; 
 }
 
-.btn-scroll:hover { background: white; color: black; }
+.btn-scroll:hover { 
+    background: white; 
+    color: black; 
+}
 
 /* =========================================
-   4. SECTIONS GÉNÉRALES
+   4. TYPOGRAPHIE & SECTIONS
    ========================================= */
-.section-padding { padding: 80px 20px; }
-.container { max-width: 1100px; margin: 0 auto; }
+.section-padding { padding: 100px 20px; } /* Plus d'espace vertical (aéré) */
+.container { max-width: 1200px; margin: 0 auto; } /* Site un peu plus large */
 .section-gray { background-color: var(--light); }
 
 h2 { 
     font-family: var(--font-title); 
-    font-size: 2.5rem; 
-    margin-bottom: 40px; 
+    font-size: 2.2rem; 
+    font-weight: 400;
+    margin-bottom: 60px; 
+    text-align: center; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+}
+
+.content-text { 
+    max-width: 700px; /* Texte plus étroit pour la lecture */
+    margin: 0 auto; 
     text-align: center; 
 }
 
-.content-text { max-width: 800px; margin: 0 auto; text-align: center; }
+p { margin-bottom: 20px; }
 
 /* =========================================
-   5. CARTES SERVICES
+   5. CARTES SERVICES (Minimalistes)
    ========================================= */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .service-card {
     background: white;
-    padding: 40px;
+    padding: 50px 30px;
     text-align: center;
     text-decoration: none;
     color: #333;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid #eee; /* Bordure très légère */
+    transition: 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
     border-color: var(--wood);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .icon-box {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--wood);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .service-card h3 {
     font-family: var(--font-title);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
 .service-card p {
     font-size: 0.95rem;
     color: #666;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-weight: 300;
 }
 
 .link-text {
     color: var(--wood);
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-family: var(--font-title);
+    font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
     margin-top: auto;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.service-card:hover .link-text {
+    border-bottom: 1px solid var(--wood);
 }
 
 /* =========================================
@@ -198,8 +231,8 @@ h2 {
    ========================================= */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 .project-card {
@@ -207,39 +240,55 @@ h2 {
     display: block;
     cursor: pointer;
     overflow: hidden;
-    height: 350px;
+    height: 400px; /* Cartes un peu plus hautes */
 }
 
 .project-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.8s ease; /* Zoom plus lent et doux */
 }
 
-.project-card:hover img { transform: scale(1.05); }
+.project-card:hover img { transform: scale(1.08); }
 
 .overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(44, 62, 80, 0.8); /* Fond plus uni et moderne au survol */
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.4s ease;
 }
 
 .project-card:hover .overlay { opacity: 1; }
 
+.overlay h3 {
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.overlay p {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
 /* =========================================
-   7. PAGES DÉTAILLÉES
+   7. PAGES DÉTAILLÉES (Headers épurés)
    ========================================= */
 .project-header {
-    padding-top: 120px; /* <--- AJUSTÉ (C'était 180px) pour éviter un gros vide */
-    padding-bottom: 50px;
+    padding-top: 160px;
+    padding-bottom: 80px;
     text-align: center;
     background: var(--light);
 }
@@ -247,27 +296,32 @@ h2 {
 .project-header h1 { 
     font-family: var(--font-title); 
     font-size: 3rem; 
-    margin-bottom: 20px; 
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px; 
+    color: var(--primary);
 }
 
 .project-intro { 
-    max-width: 800px; 
-    margin: 0 auto 50px auto; 
+    max-width: 700px; 
+    margin: 0 auto; 
     font-size: 1.1rem; 
+    font-weight: 300;
     color: #555; 
 }
 
 .detail-gallery {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    margin-bottom: 80px;
+    gap: 100px; /* Beaucoup d'espace entre les sections */
+    margin-bottom: 100px;
 }
 
 .detail-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
 }
 
@@ -277,84 +331,110 @@ h2 {
 .detail-image img { 
     width: 100%; 
     height: auto; 
-    border-radius: 4px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    border-radius: 2px; /* Rayon très faible pour aspect net */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
 }
 
 .detail-text h3 { 
     font-family: var(--font-title); 
     font-size: 1.8rem; 
-    margin-bottom: 15px; 
-    color: var(--primary); 
+    font-weight: 400;
+    margin-bottom: 20px; 
+    color: var(--primary);
+    letter-spacing: 1px;
 }
 
 /* =========================================
-   8. ANIMATIONS & FORMULAIRE
+   8. FORMULAIRE (Style Minimaliste)
    ========================================= */
-.fade-in { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
 .contact-form { 
     display: flex; 
     flex-direction: column; 
-    gap: 15px; 
+    gap: 20px; 
     max-width: 600px; 
-    margin: 30px auto; 
+    margin: 40px auto; 
 }
 
 input, textarea { 
-    padding: 15px; 
-    border: 1px solid #ccc; 
+    padding: 18px; 
+    border: 1px solid #ddd; 
+    background: #fafafa;
     font-family: var(--font-main); 
-    border-radius: 0; 
+    font-size: 0.95rem;
+    border-radius: 2px; 
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--wood);
+    background: white;
 }
 
 button { 
-    padding: 15px; 
+    padding: 18px; 
     background: var(--wood); 
     color: white; 
     border: none; 
     cursor: pointer; 
     text-transform: uppercase; 
-    font-weight: bold; 
+    font-family: var(--font-title);
+    letter-spacing: 2px;
+    font-size: 0.9rem;
     transition: 0.3s; 
 }
 
-button:hover { background: var(--primary); }
+button:hover { 
+    background: var(--primary); 
+    letter-spacing: 3px; /* Petit effet d'écartement au survol */
+}
 
 /* =========================================
    9. FOOTER
    ========================================= */
 footer { 
     background: var(--primary); 
-    color: white; 
+    color: rgba(255,255,255,0.8); 
     text-align: center; 
-    padding: 30px; 
-    margin-top: 50px; 
+    padding: 50px 20px; 
+    margin-top: 80px; 
+    font-weight: 300;
+    font-size: 0.9rem;
 }
 
 .back-btn { 
     display: inline-block; 
-    margin-top: 30px; 
+    margin-top: 40px; 
     text-decoration: none; 
     color: var(--wood); 
-    font-weight: bold; 
-    border-bottom: 1px solid var(--wood); 
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
 }
 
+.back-btn:hover { border-bottom: 1px solid var(--wood); }
+
+/* ANIMATION */
+.fade-in { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
 /* =========================================
-   10. RESPONSIVE (MOBILE)
+   10. RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    nav { padding: 10px 20px; height: 70px; } /* Hauteur réduite mobile */
+    .hero h1 { font-size: 2.5rem; letter-spacing: 2px; }
+    nav { padding: 0 20px; height: 70px; }
     .nav-links { display: none !important; }
     
-    .detail-item { grid-template-columns: 1fr; direction: ltr !important; }
+    .detail-item { grid-template-columns: 1fr; direction: ltr !important; gap: 30px; }
+    .section-padding { padding: 60px 20px; }
     
-    .logo img { height: 50px; width: 50px; } /* Logo ajusté mobile */
+    .logo img { height: 50px; width: 50px; }
 }
