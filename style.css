@@ -23,72 +23,67 @@ body {
 }
 
 /* =========================================
-   2. NAVIGATION & LOGO (CORRIGÉ)
+   2. NAVIGATION & LOGO (VERSION FINE)
    ========================================= */
 nav {
     display: flex;
-    justify-content: space-between; /* Sépare le logo (gauche) des liens (droite) */
-    align-items: center; /* Centre verticalement */
-    padding: 15px 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;      /* Padding réduit */
     background: white;
     position: fixed;
     width: 100%;
-    height: 130px; /* On fixe une hauteur pour accommoder le gros logo */
+    height: 80px;         /* <--- HAUTEUR RÉDUITE ICI (C'était 130px) */
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Style du Logo - AGRANDI */
+/* Style du Logo - RÉDUIT POUR ENTRER DANS LE BANDEAU */
 .logo img {
-    height: 80px;        /* Agrandissement (était 80px) */
-    width: 80px;         /* Agrandissement */
-    border-radius: 50%;   /* Cercle parfait */
+    height: 60px;         /* <--- TAILLE RÉDUITE (C'était 110px) */
+    width: 60px;          /* <--- TAILLE RÉDUITE */
+    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--wood); /* Bordure un peu plus épaisse */
+    border: 2px solid var(--wood); /* Bordure plus fine */
     transition: transform 0.3s ease;
     display: block;
 }
 
 .logo img:hover {
-    transform: scale(1.1); /* Zoom au survol */
+    transform: scale(1.1);
 }
 
-/* Style des Liens - FORCÉ À L'HORIZONTALE */
+/* Style des Liens */
 ul.nav-links { 
-    display: flex !important;       /* !important force l'affichage flexible */
-    flex-direction: row;            /* Force la ligne horizontale */
+    display: flex !important;
+    flex-direction: row;
     align-items: center;
     gap: 30px; 
-    list-style: none !important;    /* Enlève les points (puces) */
+    list-style: none !important;
     margin: 0;
     padding: 0;
 }
 
-.nav-links li {
-    display: inline-block; /* Sécurité supplémentaire */
-}
+.nav-links li { display: inline-block; }
 
 .nav-links a { 
     text-decoration: none; 
     color: #333; 
     text-transform: uppercase; 
-    font-size: 1rem; /* Un peu plus gros pour équilibrer avec le logo */
+    font-size: 0.85rem;   /* Police un peu plus fine et élégante */
     font-weight: 600;
     letter-spacing: 1px; 
     transition: 0.3s; 
 }
 
-.nav-links a:hover { 
-    color: var(--wood); 
-}
+.nav-links a:hover { color: var(--wood); }
 
 /* =========================================
    3. HERO SECTION (ACCUEIL)
    ========================================= */
 .hero {
     height: 100vh;
-    /* Image de fond */
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('mazure.jpg');
     background-attachment: fixed;
     background-position: center;
@@ -123,10 +118,7 @@ ul.nav-links {
     transition: 0.3s; 
 }
 
-.btn-scroll:hover { 
-    background: white; 
-    color: black; 
-}
+.btn-scroll:hover { background: white; color: black; }
 
 /* =========================================
    4. SECTIONS GÉNÉRALES
@@ -142,14 +134,10 @@ h2 {
     text-align: center; 
 }
 
-.content-text { 
-    max-width: 800px; 
-    margin: 0 auto; 
-    text-align: center; 
-}
+.content-text { max-width: 800px; margin: 0 auto; text-align: center; }
 
 /* =========================================
-   5. CARTES SERVICES (Icônes)
+   5. CARTES SERVICES
    ========================================= */
 .services-grid {
     display: grid;
@@ -250,7 +238,7 @@ h2 {
    7. PAGES DÉTAILLÉES
    ========================================= */
 .project-header {
-    padding-top: 180px; /* Augmenté car la nav est plus haute */
+    padding-top: 120px; /* <--- AJUSTÉ (C'était 180px) pour éviter un gros vide */
     padding-bottom: 50px;
     text-align: center;
     background: var(--light);
@@ -363,10 +351,10 @@ footer {
    ========================================= */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
-    nav { padding: 10px 20px; height: 100px; }
-    .nav-links { display: none !important; } /* Cache le menu sur mobile */
+    nav { padding: 10px 20px; height: 70px; } /* Hauteur réduite mobile */
+    .nav-links { display: none !important; }
     
     .detail-item { grid-template-columns: 1fr; direction: ltr !important; }
     
-    .logo img { height: 80px; width: 80px; } /* Logo plus petit sur mobile */
+    .logo img { height: 50px; width: 50px; } /* Logo ajusté mobile */
 }
