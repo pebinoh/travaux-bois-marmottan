@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+    <div id="loader"><div class="loader-content"><span class="loader-logo">TBM</span><div class="loader-line"></div></div></div>
+    
     <nav>
         <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
         <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -33,7 +34,7 @@
     <section class="container">
         <div class="detail-gallery">
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="scierie.jpg" alt="Installation de sciage"></div>
+                <div class="detail-image"><img src="scierie.jpg" alt="Installation de sciage" loading="lazy"></div>
                 <div class="detail-text">
                     <h3>Débit sur mesure</h3><p>Nous disposons de l'équipement nécessaire pour débiter des grumes selon vos spécifications.</p>
                     <br>
@@ -48,7 +49,8 @@
         </div>
     </section>
 
-    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <footer><p>© 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
