@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charpentier Menuisier Savoie | TBM - Travaux Bois Marmottan</title>
-    <meta name="description" content="TBM est une entreprise de menuiserie et charpente basée à Sainte-Foy-Tarentaise (73). Spécialiste rénovation chalet, sciage sur mesure.">
+    <meta name="description" content="TBM est une entreprise de menuiserie et charpente basée à Sainte-Foy-Tarentaise (73). Spécialiste rénovation chalet, sciage sur mesure et travaux d'accès difficile.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -14,12 +14,21 @@
 <body>
 
     <div id="loader">
-        <div class="loader-content"><span class="loader-logo">TBM</span><div class="loader-line"></div></div>
+        <div class="loader-content">
+            <span class="loader-logo">TBM</span>
+            <div class="loader-line"></div>
+        </div>
     </div>
 
     <nav>
-        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
-        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
+            </a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html#accueil" onclick="toggleMenu()">Accueil</a></li>
             <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
@@ -40,7 +49,7 @@
         <div class="content-text fade-in">
             <h2>L'Exigence de la Montagne</h2>
             <p>Spécialisé dans les chantiers à accès restreints et la rénovation d'altitude.</p>
-            <p>TBM allie techniques traditionnelles et logistique de pointe (Sainte-Foy, Val d'Isère, Tignes).</p>
+            <p>TBM allie techniques traditionnelles et logistique de pointe pour intervenir là où les autres s'arrêtent (Sainte-Foy, Val d'Isère, Tignes).</p>
         </div>
     </section>
 
@@ -50,11 +59,15 @@
             <div class="services-grid">
                 <a href="sciage.html" class="service-card fade-in">
                     <div class="icon-box"><i class="fas fa-tree"></i></div>
-                    <h3>Sciage à façon</h3><p>Débit sur mesure, poutres & planches.</p><span class="link-text">En savoir plus &rarr;</span>
+                    <h3>Sciage à façon</h3>
+                    <p>Débit sur mesure, poutres & planches. Valorisation du bois local.</p>
+                    <span class="link-text">En savoir plus →</span>
                 </a>
                 <a href="atelier.html" class="service-card fade-in">
                     <div class="icon-box"><i class="fas fa-tools"></i></div>
-                    <h3>Fabrication Atelier</h3><p>Menuiserie d'agencement, escaliers.</p><span class="link-text">En savoir plus &rarr;</span>
+                    <h3>Fabrication Atelier</h3>
+                    <p>Menuiserie d'agencement, escaliers et meubles sur mesure.</p>
+                    <span class="link-text">En savoir plus →</span>
                 </a>
             </div>
         </div>
@@ -68,23 +81,34 @@
         <div class="gallery-grid">
             <a href="baptieu.html" class="project-card fade-in">
                 <img src="baptieu_3.jpg" alt="Restauration de ferme" loading="lazy">
-                <div class="overlay"><h3>Restauration de ferme</h3><p>Voir le projet</p></div>
+                <div class="overlay">
+                    <h3>Restauration de ferme</h3>
+                    <p>Voir le projet</p>
+                </div>
             </a>
             <a href="noyerai.html" class="project-card fade-in">
                 <img src="noyerai_1.jpg" alt="Reprise en sous-œuvre" loading="lazy">
-                <div class="overlay"><h3>Reprise en sous-œuvre</h3><p>Voir le projet</p></div>
+                <div class="overlay">
+                    <h3>Reprise en sous-œuvre</h3>
+                    <p>Voir le projet</p>
+                </div>
             </a>
             <a href="fenetre.html" class="project-card fade-in">
                 <img src="fenetre_grue.jpg" alt="Pose complexe" loading="lazy">
-                <div class="overlay"><h3>Pose Menuiserie Grue</h3><p>Voir le projet</p></div>
+                <div class="overlay">
+                    <h3>Pose Menuiserie Grue</h3>
+                    <p>Voir le projet</p>
+                </div>
             </a>
         </div>
     </section>
 
-    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <footer>
+        <p>&copy; 2025 TBM - Travaux Bois Marmottan. Tous droits réservés.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;"><a href="mentions-legales.html" style="color: white; text-decoration: underline;">Mentions Légales</a></p>
+    </footer>
 
     <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
-
     <script src="script.js"></script>
 </body>
 </html>
