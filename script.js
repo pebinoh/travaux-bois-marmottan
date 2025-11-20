@@ -28,10 +28,22 @@ function toggleMenu() {
 // GESTION DU LOADER (ÉCRAN DE CHARGEMENT)
 window.addEventListener("load", function() {
     const loader = document.getElementById("loader");
-    // Si le loader existe, on le cache après 1.5 secondes
     if (loader) {
         setTimeout(function() {
             loader.classList.add("loader-hidden");
         }, 1500);
     }
 });
+
+// GESTION DU BOUTON RETOUR EN HAUT (NOUVEAU)
+const backToTopButton = document.getElementById("backToTop");
+if (backToTopButton) {
+    window.addEventListener("scroll", function() {
+        // Si on descend de 300px, on affiche le bouton
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    });
+}
