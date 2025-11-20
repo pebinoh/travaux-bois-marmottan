@@ -193,3 +193,44 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
     /* Bouton retour en haut plus petit sur mobile */
     #backToTop { width: 40px; height: 40px; font-size: 1rem; bottom: 20px; right: 20px; }
 }
+   /* =========================================
+      14. LIGHTBOX (ZOOM IMAGE)
+      ========================================= */
+   .lightbox {
+       display: none;
+       position: fixed;
+       z-index: 10000;
+       padding-top: 50px;
+       left: 0; top: 0;
+       width: 100%; height: 100%;
+       background-color: rgba(0, 0, 0, 0.9);
+   }
+   
+   .lightbox-content {
+       margin: auto;
+       display: block;
+       width: 80%;
+       max-width: 1000px;
+       max-height: 80vh;
+       object-fit: contain;
+       animation: zoomIn 0.3s;
+   }
+   
+   .lightbox-close {
+       position: absolute;
+       top: 20px; right: 35px;
+       color: #f1f1f1;
+       font-size: 40px;
+       font-weight: bold;
+       transition: 0.3s;
+       cursor: pointer;
+   }
+   
+   .lightbox-close:hover { color: var(--wood); }
+   
+   @keyframes zoomIn {
+       from {transform:scale(0)} to {transform:scale(1)}
+   }
+   
+   /* Curseur loupe sur les images de détail */
+   .detail-image img { cursor: zoom-in; }
