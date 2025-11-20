@@ -11,18 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+    <div id="loader"><div class="loader-content"><span class="loader-logo">TBM</span><div class="loader-line"></div></div></div>
+    
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo_tbm.jpg" alt="Logo TBM Accueil">
-            </a>
-        </div>
-        
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-
+        <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" onclick="toggleMenu()">Accueil</a></li>
             <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
@@ -41,33 +34,23 @@
     <section class="container">
         <div class="detail-gallery">
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="baptieu_1.jpg" alt="Structure ferme"></div>
-                <div class="detail-text">
-                    <h3>Restauration de la structure</h3>
-                    <p>Nous avons commencé par une analyse structurelle complète. Le bois d'origine a été nettoyé et traité.</p>
-                </div>
+                <div class="detail-image"><img src="baptieu_1.jpg" alt="Structure ferme" loading="lazy"></div>
+                <div class="detail-text"><h3>Restauration de la structure</h3><p>Analyse structurelle complète. Bois d'origine nettoyé et traité.</p></div>
             </div>
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="baptieu_2.jpg" alt="Auvent sur mesure"></div>
-                <div class="detail-text">
-                    <h3>Création d'un auvent</h3>
-                    <p>Conception et levage d'un auvent traditionnel pour protéger la façade.</p>
-                </div>
+                <div class="detail-image"><img src="baptieu_2.jpg" alt="Auvent sur mesure" loading="lazy"></div>
+                <div class="detail-text"><h3>Création d'un auvent</h3><p>Conception et levage d'un auvent traditionnel.</p></div>
             </div>
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="baptieu_3.jpg" alt="Résultat final ferme"></div>
-                <div class="detail-text">
-                    <h3>Résultat Final</h3>
-                    <p>Le projet terminé révèle une harmonie retrouvée entre l'ancien et le neuf.</p>
-                </div>
+                <div class="detail-image"><img src="baptieu_3.jpg" alt="Résultat final ferme" loading="lazy"></div>
+                <div class="detail-text"><h3>Résultat Final</h3><p>Harmonie retrouvée entre l'ancien et le neuf.</p></div>
             </div>
         </div>
-        <div style="text-align:center;">
-            <a href="index.html#projets" class="back-btn">← Retour aux réalisations</a>
-        </div>
+        <div style="text-align:center;"><a href="index.html#projets" class="back-btn">← Retour aux réalisations</a></div>
     </section>
 
-    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <footer><p>© 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
