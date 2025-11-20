@@ -47,3 +47,32 @@ if (backToTopButton) {
         }
     });
 }
+
+// GESTION DE LA LIGHTBOX (ZOOM IMAGE)
+document.addEventListener("DOMContentLoaded", function() {
+    // Création dynamique de la structure Lightbox dans le HTML
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img class="lightbox-content" id="lightbox-img">';
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    // On cible toutes les images qui sont dans les galeries de détails
+    const images = document.querySelectorAll('.detail-image img');
+
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            lightbox.style.display = "block";
+            lightboxImg.src = this.src;
+        });
+    });
+
+    // Fermeture
+    closeBtn.onclick = function() { lightbox.style.display = "none"; }
+    lightbox.onclick = function(e) {
+        if (e.target !== lightboxImg) { lightbox.style.display = "none"; }
+    }
+});
