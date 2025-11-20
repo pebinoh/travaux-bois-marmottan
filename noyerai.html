@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+    <div id="loader"><div class="loader-content"><span class="loader-logo">TBM</span><div class="loader-line"></div></div></div>
+    
     <nav>
         <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
         <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -26,33 +27,34 @@
     <section class="project-header fade-in">
         <div class="container">
             <h1>Reprise en Sous-Œuvre</h1>
-            <p class="project-intro">Une intervention chirurgicale sur une structure existante.</p>
+            <p class="project-intro">Intervention chirurgicale sur structure existante.</p>
         </div>
     </section>
 
     <section class="container">
         <div class="detail-gallery">
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="noyerai_2.jpg" alt="Entrait pourri"></div>
-                <div class="detail-text"><h3>Diagnostic : Entrait dégradé</h3><p>L'entrait d'origine présentait des signes avancés de pourrissement.</p></div>
+                <div class="detail-image"><img src="noyerai_2.jpg" alt="Entrait pourri" loading="lazy"></div>
+                <div class="detail-text"><h3>Diagnostic : Entrait dégradé</h3><p>Signes avancés de pourrissement.</p></div>
             </div>
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="noyerai_3.jpg" alt="Nouvelle pièce"></div>
-                <div class="detail-text"><h3>Remplacement structurel</h3><p>Substitution de la pièce défectueuse par une nouvelle poutre en bois massif.</p></div>
+                <div class="detail-image"><img src="noyerai_3.jpg" alt="Nouvelle pièce" loading="lazy"></div>
+                <div class="detail-text"><h3>Remplacement structurel</h3><p>Substitution par une nouvelle poutre en bois massif.</p></div>
             </div>
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="noyerai_5.jpg" alt="Pose fenêtres"></div>
+                <div class="detail-image"><img src="noyerai_5.jpg" alt="Pose fenêtres" loading="lazy"></div>
                 <div class="detail-text"><h3>Pose des menuiseries</h3><p>Intégration des nouvelles menuiseries isolantes.</p></div>
             </div>
             <div class="detail-item fade-in">
-                <div class="detail-image"><img src="noyerai_4.jpg" alt="Grue et palonnier"></div>
-                <div class="detail-text"><h3>Moyens de levage</h3><p>Utilisation d'une grue mobile équipée d'un palonnier à ventouses.</p></div>
+                <div class="detail-image"><img src="noyerai_4.jpg" alt="Grue et palonnier" loading="lazy"></div>
+                <div class="detail-text"><h3>Moyens de levage</h3><p>Utilisation d'une grue mobile avec palonnier.</p></div>
             </div>
         </div>
         <div style="text-align:center;"><a href="index.html#projets" class="back-btn">← Retour aux réalisations</a></div>
     </section>
 
-    <footer><p>&copy; 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <footer><p>© 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
