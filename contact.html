@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-
+    <div id="loader"><div class="loader-content"><span class="loader-logo">TBM</span><div class="loader-line"></div></div></div>
+    
     <nav>
         <div class="logo"><a href="index.html"><img src="logo_tbm.jpg" alt="Logo TBM"></a></div>
         <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -29,84 +29,44 @@
     <section class="project-header fade-in">
         <div class="container">
             <h1>Contactez-nous</h1>
-            <p class="project-intro">Une question sur un projet de rénovation ou de construction ? N'hésitez pas à nous écrire ou à nous rendre visite à l'atelier.</p>
+            <p class="project-intro">N'hésitez pas à nous écrire ou à nous rendre visite à l'atelier.</p>
         </div>
     </section>
 
     <section class="container section-padding">
         <div class="contact-layout">
-            
             <div class="contact-info fade-in">
-                <div class="info-box">
-                    <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
-                    <p><strong>TBM - Travaux Bois Marmottan</strong><br>
-                    La Savinaz<br>
-                    73640 Villaroger<br>
-                    Savoie, France</p>
-                </div>
-
-                <div class="info-box">
-                    <h3><i class="fas fa-phone"></i> Téléphone</h3>
-                    <p>06 XX XX XX XX</p> </div>
-
-                <div class="info-box">
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
-                    <p>contact@tbm-bois.com</p> </div>
-
+                <div class="info-box"><h3><i class="fas fa-map-marker-alt"></i> Adresse</h3><p><strong>TBM - Travaux Bois Marmottan</strong><br>La Savinaz<br>73640 Villaroger<br>Savoie, France</p></div>
+                <div class="info-box"><h3><i class="fas fa-phone"></i> Téléphone</h3><p>06 XX XX XX XX</p></div>
+                <div class="info-box"><h3><i class="fas fa-envelope"></i> Email</h3><p>contact@tbm-bois.com</p></div>
                 <div id="map-container">
-                    <div id="map"></div> <a href="https://www.google.com/maps/dir//La+Savinaz,+73640+Villaroger" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Itinéraire Google Maps</a>
+                    <div id="map"></div>
+                    <a href="https://www.google.com/maps/dir//La+Savinaz,+73640+Villaroger" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Itinéraire Google Maps</a>
                 </div>
             </div>
-
             <div class="contact-form-wrapper fade-in">
                 <h3>Envoyez-nous un message</h3>
                 <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="contact-form">
-                    <label>Votre Nom</label>
-                    <input type="text" name="nom" placeholder="Ex: Jean Dupont" required>
-                    
-                    <label>Votre Email</label>
-                    <input type="email" name="email" placeholder="email@exemple.com" required>
-                    
-                    <label>Sujet</label>
-                    <input type="text" name="sujet" placeholder="Ex: Devis Rénovation Chalet" required>
-                    
-                    <label>Message</label>
-                    <textarea name="message" rows="6" placeholder="Décrivez votre projet..." required></textarea>
-                    
+                    <label>Votre Nom</label><input type="text" name="nom" required>
+                    <label>Votre Email</label><input type="email" name="email" required>
+                    <label>Sujet</label><input type="text" name="sujet" required>
+                    <label>Message</label><textarea name="message" rows="6" required></textarea>
                     <button type="submit">Envoyer la demande</button>
                 </form>
             </div>
-
         </div>
     </section>
 
     <footer><p>© 2025 TBM - Travaux Bois Marmottan.</p></footer>
+    
+    <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
 
     <script src="script.js"></script>
-    
     <script>
-        // 1. Coordonnées de La Savinaz, Villaroger (Ajustées)
-        var lat = 45.594; 
-        var lng = 6.868;
-
-        // 2. Initialisation de la carte
-        var map = L.map('map', {
-            center: [lat, lng],
-            zoom: 13, // Niveau de zoom (plus grand = plus proche)
-            scrollWheelZoom: false // Empêche de zoomer quand on scrolle la page
-        });
-
-        // 3. Le style "PLAN D'ARCHITECTE" (Noir & Blanc / CartoDB Positron)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 20
-        }).addTo(map);
-
-        // 4. Le Marqueur (Le point sur la carte)
-        var marker = L.marker([lat, lng]).addTo(map);
-        marker.bindPopup("<b>TBM - Atelier</b><br>La Savinaz, Villaroger").openPopup();
+        var lat = 45.594; var lng = 6.868;
+        var map = L.map('map', { center: [lat, lng], zoom: 13, scrollWheelZoom: false });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+        L.marker([lat, lng]).addTo(map).bindPopup("<b>TBM - Atelier</b><br>La Savinaz, Villaroger").openPopup();
     </script>
-
 </body>
 </html>
