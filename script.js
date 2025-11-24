@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Animation d'apparition au scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
+    // Animation Scroll
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -14,43 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, observerOptions);
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
-});
-
-// GESTION DU MENU MOBILE
-function toggleMenu() {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("active");
-}
-
-// GESTION DU LOADER (ÉCRAN DE CHARGEMENT)
-window.addEventListener("load", function() {
-    const loader = document.getElementById("loader");
-    if (loader) {
-        setTimeout(function() {
-            loader.classList.add("loader-hidden");
-        }, 1500);
-    }
-});
-
-// GESTION DU BOUTON RETOUR EN HAUT (NOUVEAU)
-const backToTopButton = document.getElementById("backToTop");
-if (backToTopButton) {
-    window.addEventListener("scroll", function() {
-        // Si on descend de 300px, on affiche le bouton
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add("show");
-        } else {
-            backToTopButton.classList.remove("show");
-        }
-    });
-}
-
-// GESTION DE LA LIGHTBOX (ZOOM IMAGE)
-document.addEventListener("DOMContentLoaded", function() {
-    // Création dynamique de la structure Lightbox dans le HTML
+    // GESTION DE LA LIGHTBOX (ZOOM IMAGE)
+    // On crée les éléments HTML de la lightbox dynamiquement
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.className = 'lightbox';
@@ -60,9 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    // On cible toutes les images qui sont dans les galeries de détails
+    // On active le zoom sur toutes les images de détail
     const images = document.querySelectorAll('.detail-image img');
-
     images.forEach(img => {
         img.addEventListener('click', function() {
             lightbox.style.display = "block";
@@ -76,3 +37,26 @@ document.addEventListener("DOMContentLoaded", function() {
         if (e.target !== lightboxImg) { lightbox.style.display = "none"; }
     }
 });
+
+// MENU MOBILE
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+}
+
+// LOADER
+window.addEventListener("load", function() {
+    const loader = document.getElementById("loader");
+    if (loader) {
+        setTimeout(function() { loader.classList.add("loader-hidden"); }, 1500);
+    }
+});
+
+// BOUTON RETOUR HAUT
+const backToTopButton = document.getElementById("backToTop");
+if (backToTopButton) {
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) { backToTopButton.classList.add("show"); }
+        else { backToTopButton.classList.remove("show"); }
+    });
+}
