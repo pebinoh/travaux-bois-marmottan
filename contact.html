@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact & Localisation - TBM</title>
-    
     <link rel="icon" type="image/jpeg" href="logo_tbm.jpg">
     <meta property="og:title" content="Contactez TBM - Menuiserie Charpente">
     <meta property="og:description" content="Demandez un devis ou visitez notre atelier à La Savinaz, Villaroger.">
     <meta property="og:image" content="https://pebinoh.github.io/travaux-bois-marmottan/mazure.jpg">
     <meta property="og:url" content="https://pebinoh.github.io/travaux-bois-marmottan/contact.html">
     <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -89,13 +87,41 @@
     </section>
 
     <footer>
-        <p>© 2025 TBM - Travaux Bois Marmottan. Tous droits réservés.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;"><a href="mentions-legales.html" style="color: white; text-decoration: underline;">Mentions Légales</a></p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>TBM</h4>
+                    <p style="color:#bbb; font-size:0.9rem; line-height:1.6;">
+                        Entreprise de menuiserie et charpente savoyarde. L'alliance du savoir-faire traditionnel et des techniques modernes.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="sciage.html">Sciage & Bois</a></li>
+                        <li><a href="atelier.html">Atelier Menuiserie</a></li>
+                        <li><a href="contact.html">Contact & Devis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Nous trouver</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> La Savinaz, 73640 Villaroger</p>
+                    <p><i class="fas fa-phone"></i> 06 XX XX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> contact@travaux-bois-marmottan.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TBM - Travaux Bois Marmottan. Tous droits réservés.</p>
+                <p style="margin-top: 5px;">
+                    <a href="mentions-legales.html" style="text-decoration: underline;">Mentions Légales</a>
+                </p>
+            </div>
+        </div>
     </footer>
 
     <a href="#" id="backToTop" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
     <script src="script.js"></script>
-    
     <script>
         var lat = 45.594; var lng = 6.868;
         var map = L.map('map', { center: [lat, lng], zoom: 13, scrollWheelZoom: false });
