@@ -58,7 +58,7 @@ ul.nav-links {
 .hamburger { display: none; font-size: 1.8rem; color: #333; cursor: pointer; }
 
 /* =========================================
-   3. HERO SECTION & SCROLL INDICATOR
+   3. HERO SECTION
    ========================================= */
 .hero {
     height: 100vh;
@@ -229,3 +229,43 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
 .lightbox-close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
 .lightbox-close:hover { color: var(--wood); }
 @keyframes zoomIn { from {transform:scale(0.8); opacity:0;} to {transform:scale(1); opacity:1;} }
+
+/* =========================================
+   15. NAVIGATION PROJETS (NEXT/PREV)
+   ========================================= */
+.project-nav-container {
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+.project-nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+.project-nav-link {
+    font-family: var(--font-title);
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+.project-nav-link:hover {
+    color: var(--wood);
+    letter-spacing: 3px;
+}
+
+/* =========================================
+   16. TYPOGRAPHIE (LETTRINE)
+   ========================================= */
+.drop-cap-text::first-letter {
+    font-family: var(--font-title); /* Police Playfair */
+    font-size: 3.5rem;
+    color: var(--wood);
+    float: left;
+    line-height: 0.8;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
