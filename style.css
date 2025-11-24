@@ -1,253 +1,69 @@
 /* =========================================
-   1. RESET & VARIABLES
-   ========================================= */
-:root {
-    --primary: #2c3e50;    /* Bleu nuit/Gris foncé */
-    --accent: #c0392b;     /* Rouge discret */
-    --wood: #8d6e63;       /* Couleur Bois (Maron glacé) */
-    --light: #f4f4f4;      /* Gris très clair */
-    --white: #ffffff;
-    --font-main: 'Montserrat', sans-serif;
-    --font-title: 'Playfair Display', serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: var(--font-main);
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* =========================================
-   2. NAVIGATION & LOGO
-   ========================================= */
-nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 50px; background: white; position: fixed;
-    width: 100%; height: 80px; top: 0; z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.logo img {
-    height: 60px; width: 60px; border-radius: 50%; object-fit: cover;
-    border: 2px solid var(--wood); transition: transform 0.3s ease; display: block;
-}
-.logo img:hover { transform: scale(1.1); }
-
-ul.nav-links { 
-    display: flex; flex-direction: row; align-items: center; gap: 30px; 
-    list-style: none; margin: 0; padding: 0;
-}
-.nav-links li { display: inline-block; }
-
-.nav-links a { 
-    text-decoration: none; color: #333; text-transform: uppercase; 
-    font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; 
-    transition: 0.3s; position: relative;
-}
-.nav-links a::after {
-    content: ''; display: block; width: 0; height: 2px; 
-    background: var(--wood); transition: width 0.3s;
-    position: absolute; bottom: -5px; left: 0;
-}
-.nav-links a:hover { color: var(--wood); }
-.nav-links a:hover::after { width: 100%; }
-
-.hamburger { display: none; font-size: 1.8rem; color: #333; cursor: pointer; }
-
-/* =========================================
-   3. HERO SECTION
-   ========================================= */
-.hero {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('mazure.jpg');
-    background-attachment: fixed; background-position: center; background-size: cover;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-    position: relative;
-}
-.hero h1 { font-family: var(--font-title); font-size: 4rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-.hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-
-.btn-scroll { 
-    border: 2px solid white; padding: 12px 35px; color: white; 
-    text-decoration: none; text-transform: uppercase; transition: all 0.3s ease;
-    position: relative; top: 0;
-}
-.btn-scroll:hover { 
-    background: white; color: black; 
-    top: -3px; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-}
-
-/* =========================================
-   4. STRUCTURE & GRILLES
-   ========================================= */
-.section-padding { padding: 60px 20px; }
-.container { max-width: 1100px; margin: 0 auto; }
-.section-gray { background-color: var(--light); }
-h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
-.content-text { max-width: 800px; margin: 0 auto; text-align: center; }
-
-.services-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-.service-card, .project-card { 
-    background: white; text-align: center; text-decoration: none; color: #333; 
-    border-radius: 4px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-}
-.service-card { padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; border: 1px solid transparent; }
-.service-card:hover { transform: translateY(-10px); border-color: var(--wood); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-.icon-box { font-size: 3rem; color: var(--wood); margin-bottom: 20px; transition: transform 0.3s; }
-.service-card:hover .icon-box { transform: scale(1.1); }
-.service-card h3 { font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 15px; }
-.link-text { color: var(--wood); font-weight: 600; text-transform: uppercase; margin-top: auto; display: inline-block; transition: transform 0.3s ease; }
-.service-card:hover .link-text { transform: translateX(10px); }
-
-.project-card { position: relative; display: block; overflow: hidden; height: 350px; }
-.project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-.project-card:hover img { transform: scale(1.05); }
-.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: 0.4s; }
-.project-card:hover .overlay { opacity: 1; }
-
-.separator-parallax {
-    height: 400px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('scierie.jpg');
-    background-attachment: fixed; background-position: center; background-size: cover;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-}
-.separator-content h3 { font-family: var(--font-title); font-size: 2.5rem; font-style: italic; letter-spacing: 2px; }
-
-/* =========================================
-   5. PAGES DÉTAILS & CONTACT
-   ========================================= */
-.project-header { padding-top: 120px; padding-bottom: 50px; text-align: center; background: var(--light); }
-.project-header h1 { font-family: var(--font-title); font-size: 3rem; margin-bottom: 20px; }
-.project-intro { max-width: 800px; margin: 0 auto 50px auto; font-size: 1.1rem; color: #555; }
-
-.detail-gallery { display: flex; flex-direction: column; gap: 60px; margin-bottom: 80px; }
-.detail-item { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.detail-item:nth-child(even) { direction: rtl; }
-.detail-item:nth-child(even) .detail-text { direction: ltr; }
-.detail-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: zoom-in; transition: transform 0.3s; }
-.detail-image img:hover { transform: scale(1.02); }
-.detail-text h3 { font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
-
-.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.info-box { margin-bottom: 30px; }
-.info-box h3 { font-family: var(--font-title); font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); text-align: left; }
-.info-box i { color: var(--wood); margin-right: 10px; }
-#map-container { margin-top: 20px; }
-#map { height: 350px; width: 100%; border: 1px solid #ddd; border-radius: 4px; z-index: 1; }
-.btn-itinerary { display: block; margin-top: 10px; text-align: center; background: #f4f4f4; color: #333; padding: 10px; text-decoration: none; font-size: 0.9rem; border-radius: 4px; transition: 0.3s; }
-.btn-itinerary:hover { background: var(--wood); color: white; }
-
-/* Animations & Form */
-.fade-in { opacity: 0; transform: translateY(30px); will-change: opacity, transform; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-.contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 30px auto; width: 100%; }
-input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); border-radius: 0; width: 100%; transition: border 0.3s; }
-input:focus, textarea:focus { outline: none; border-color: var(--wood); }
-button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: all 0.3s ease; position: relative; top: 0; }
-button:hover { background: var(--primary); top: -2px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-/* =========================================
-   9. GRAND FOOTER
-   ========================================= */
-footer { background-color: var(--primary); color: #ecf0f1; padding: 70px 0 20px; margin-top: 50px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
-.footer-col h4 { font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 20px; color: var(--wood); text-transform: uppercase; }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { color: #bbb; text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { color: white; padding-left: 5px; }
-.footer-contact p { margin-bottom: 10px; color: #bbb; font-size: 0.9rem; }
-.footer-contact i { width: 20px; color: var(--wood); margin-right: 10px; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.8rem; color: #777; }
-.footer-bottom a { color: #777; text-decoration: none; }
-.footer-bottom a:hover { color: white; }
-
-.back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--wood); font-weight: bold; border-bottom: 1px solid var(--wood); transition: color 0.3s; }
-.back-btn:hover { color: var(--primary); }
-
-/* =========================================
-   6. LOADER
-   ========================================= */
-#loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #ffffff; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out, visibility 0.8s; }
-.loader-content { text-align: center; }
-.loader-logo { font-family: var(--font-title); font-size: 4rem; color: var(--primary); letter-spacing: 5px; font-weight: bold; display: block; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s forwards; }
-.loader-line { width: 0; height: 3px; background-color: var(--wood); margin: 0 auto; animation: lineGrow 1.5s ease-in-out forwards 0.5s; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes lineGrow { to { width: 120px; } }
-.loader-hidden { opacity: 0; visibility: hidden; }
-
-/* =========================================
-   7. BOUTON RETOUR HAUT
-   ========================================= */
-#backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: var(--wood); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-#backToTop.show { opacity: 1; visibility: visible; }
-#backToTop:hover { background-color: var(--primary); transform: translateY(-5px); }
-
-/* =========================================
-   8. VERSION MOBILE (RESPONSIVE)
-   ========================================= */
-@media (max-width: 768px) {
-    .container { padding-left: 20px; padding-right: 20px; }
-    .section-padding { padding: 40px 15px; }
-    nav { padding: 0 20px; }
-    .hamburger { display: block; }
-    .service-card:hover { transform: none; } 
-    .link-text { transform: none !important; }
-    .btn-scroll:hover, button:hover { top: 0; }
-
-    .nav-links { position: absolute; top: 80px; left: 0; width: 100%; background-color: white; flex-direction: column; align-items: center; gap: 0; border-top: 1px solid #eee; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 5px 10px rgba(0,0,0,0.05); z-index: 999; }
-    .nav-links.active { max-height: 400px; }
-    .nav-links li { width: 100%; text-align: center; padding: 20px 0; border-bottom: 1px solid #f4f4f4; }
-    
-    .hero, .separator-parallax { background-attachment: scroll; background-position: center; }
-    .hero h1 { font-size: 2.2rem; padding: 0 10px; }
-    .hero p { font-size: 1rem; padding: 0 15px; }
-    h2 { font-size: 2rem; margin-bottom: 30px; }
-    .detail-item { grid-template-columns: 1fr; gap: 30px; direction: ltr !important; }
-    .contact-layout { grid-template-columns: 1fr; gap: 50px; }
-    .contact-form-wrapper { order: -1; }
-    .project-header { padding-top: 100px; }
-    .project-header h1 { font-size: 2.2rem; }
-    #backToTop { width: 40px; height: 40px; font-size: 1rem; bottom: 20px; right: 20px; }
-    
-    .separator-content h3 { font-size: 1.8rem; padding: 0 10px; }
-    
-    /* Footer mobile */
-    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-    .footer-links a:hover { padding-left: 0; }
-}
-
-/* =========================================
-   14. LIGHTBOX
-   ========================================= */
-.lightbox { display: none; position: fixed; z-index: 10000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); }
-.lightbox-content { margin: auto; display: block; width: 80%; max-width: 1200px; max-height: 85vh; object-fit: contain; animation: zoomIn 0.3s; }
-.lightbox-close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
-.lightbox-close:hover { color: var(--wood); }
-@keyframes zoomIn { from {transform:scale(0.8); opacity:0;} to {transform:scale(1); opacity:1;} }
-
-/* =========================================
-   15. NAVIGATION PROJETS (NEXT/PREV)
-   ========================================= */
-.project-nav-container { border-top: 1px solid #eee; padding-top: 40px; margin-bottom: 40px; }
-.project-nav-links { display: flex; justify-content: space-between; }
-.project-nav-link { font-family: var(--font-title); text-decoration: none; color: #999; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-.project-nav-link:hover { color: var(--wood); letter-spacing: 3px; }
-
-/* =========================================
    16. TYPOGRAPHIE (LETTRINE CORRIGÉE)
    ========================================= */
 .drop-cap-text::first-letter {
     float: left;
     font-family: var(--font-title);
-    font-size: 4.5rem; /* Taille augmentée */
-    line-height: 0.75; /* Hauteur réduite pour remonter la lettre */
-    padding-top: 4px; /* Ajustement fin vertical */
-    padding-right: 12px; /* Espace à droite */
+    font-size: 6.5rem; /* Beaucoup plus gros */
+    line-height: 0.65; /* Hauteur très réduite pour le remonter */
+    margin-top: 10px;  /* Ajustement fin pour l'aligner avec le haut du texte */
+    margin-right: 15px;
     color: var(--wood);
-    font-weight: bold;
+}
+
+/* =========================================
+   17. SECTION CHIFFRES CLÉS (NOUVEAU DESIGN)
+   ========================================= */
+.stats-section {
+    background-color: var(--light); /* Fond gris clair pour faire ressortir */
+    padding: 100px 0; /* Plus d'espace en haut et en bas */
+    text-align: center; /* Centre tout le bloc */
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center;
+    flex-wrap: wrap; /* Permet le passage à la ligne sur mobile */
+    gap: 80px; /* Grand espace entre chaque compteur */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NOUVEAU STYLE POUR LES CHIFFRES */
+.stat-number {
+    font-family: 'Montserrat', sans-serif; /* Police moderne sans-serif */
+    font-weight: 900; /* Très gras */
+    font-size: 6rem; /* ÉNORME */
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 10px;
+    /* Petit effet d'ombre portée pour le relief */
+    text-shadow: 2px 2px 0px var(--wood);
+}
+
+/* NOUVEAU STYLE POUR LES LIBELLÉS */
+.stat-label {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    border-top: 2px solid var(--wood); /* Petite ligne de séparation */
+    padding-top: 15px;
+    display: inline-block;
+}
+
+/* RESPONSIVE : Ajustement pour mobile */
+@media (max-width: 768px) {
+    .stats-grid {
+        gap: 50px;
+    }
+    .stat-number {
+        font-size: 4.5rem; /* Un peu plus petit sur mobile mais toujours gros */
+    }
 }
