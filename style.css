@@ -61,10 +61,9 @@ ul.nav-links {
 .btn-scroll:hover { background: white; color: black; }
 
 /* =========================================
-   4. STRUCTURE (OPTIMISÉE - MARGES RÉDUITES)
+   4. STRUCTURE & GRILLES
    ========================================= */
-/* MODIFICATION ICI : 60px au lieu de 80px pour réduire le scroll */
-.section-padding { padding: 60px 20px; } 
+.section-padding { padding: 60px 20px; }
 .container { max-width: 1100px; margin: 0 auto; }
 .section-gray { background-color: var(--light); }
 h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
@@ -95,7 +94,7 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
 .detail-item { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 .detail-item:nth-child(even) { direction: rtl; }
 .detail-item:nth-child(even) .detail-text { direction: ltr; }
-.detail-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.detail-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: zoom-in; /* Curseur loupe pour la lightbox */ }
 .detail-text h3 { font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
 
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
@@ -107,18 +106,9 @@ h2 { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 40px; tex
 .btn-itinerary { display: block; margin-top: 10px; text-align: center; background: #f4f4f4; color: #333; padding: 10px; text-decoration: none; font-size: 0.9rem; border-radius: 4px; transition: 0.3s; }
 .btn-itinerary:hover { background: var(--wood); color: white; }
 
-/* =========================================
-   6. ANIMATIONS & FORMULAIRE (OPTIMISÉS)
-   ========================================= */
-.fade-in { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    /* MODIFICATION : 'will-change' pour aider le navigateur sur mobile */
-    will-change: opacity, transform;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Plus rapide */
-}
+/* Animations & Form */
+.fade-in { opacity: 0; transform: translateY(30px); will-change: opacity, transform; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-
 .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 30px auto; width: 100%; }
 input, textarea { padding: 15px; border: 1px solid #ccc; font-family: var(--font-main); border-radius: 0; width: 100%; }
 button { padding: 15px; background: var(--wood); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
@@ -128,109 +118,59 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
 .back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--wood); font-weight: bold; border-bottom: 1px solid var(--wood); }
 
 /* =========================================
-   7. LOADER (ÉCRAN DE CHARGEMENT)
+   6. LOADER
    ========================================= */
-#loader {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #ffffff; z-index: 9999;
-    display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out, visibility 0.8s;
-}
+#loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #ffffff; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out, visibility 0.8s; }
 .loader-content { text-align: center; }
-.loader-logo {
-    font-family: var(--font-title); font-size: 4rem; color: var(--primary);
-    letter-spacing: 5px; font-weight: bold; display: block; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s forwards;
-}
-.loader-line {
-    width: 0; height: 3px; background-color: var(--wood); margin: 0 auto; animation: lineGrow 1.5s ease-in-out forwards 0.5s;
-}
+.loader-logo { font-family: var(--font-title); font-size: 4rem; color: var(--primary); letter-spacing: 5px; font-weight: bold; display: block; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s forwards; }
+.loader-line { width: 0; height: 3px; background-color: var(--wood); margin: 0 auto; animation: lineGrow 1.5s ease-in-out forwards 0.5s; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes lineGrow { to { width: 120px; } }
 .loader-hidden { opacity: 0; visibility: hidden; }
 
 /* =========================================
-   8. BOUTON RETOUR EN HAUT (NOUVEAU)
+   7. BOUTON RETOUR HAUT
    ========================================= */
-#backToTop {
-    position: fixed; bottom: 30px; right: 30px;
-    width: 50px; height: 50px; background-color: var(--wood); color: white;
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 999; opacity: 0; visibility: hidden;
-    transition: opacity 0.4s, transform 0.3s, background 0.3s;
-}
+#backToTop { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: var(--wood); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; opacity: 0; visibility: hidden; transition: opacity 0.4s, transform 0.3s, background 0.3s; }
 #backToTop.show { opacity: 1; visibility: visible; }
 #backToTop:hover { background-color: var(--primary); transform: translateY(-5px); }
 
 /* =========================================
-   9. VERSION MOBILE (RESPONSIVE)
+   8. VERSION MOBILE (RESPONSIVE)
    ========================================= */
 @media (max-width: 768px) {
-    /* Marges réduites pour le mobile */
     .container { padding-left: 20px; padding-right: 20px; }
-    .section-padding { padding: 40px 15px; } /* Encore plus compact sur mobile */
-    
+    .section-padding { padding: 40px 15px; }
     nav { padding: 0 20px; }
     .hamburger { display: block; }
-    .nav-links { 
-        position: absolute; top: 80px; left: 0; width: 100%; background-color: white; 
-        flex-direction: column; align-items: center; gap: 0; border-top: 1px solid #eee; 
-        max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; 
-        box-shadow: 0 5px 10px rgba(0,0,0,0.05); z-index: 999; 
-    }
+    .nav-links { position: absolute; top: 80px; left: 0; width: 100%; background-color: white; flex-direction: column; align-items: center; gap: 0; border-top: 1px solid #eee; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 5px 10px rgba(0,0,0,0.05); z-index: 999; }
     .nav-links.active { max-height: 400px; }
     .nav-links li { width: 100%; text-align: center; padding: 20px 0; border-bottom: 1px solid #f4f4f4; }
-
     .hero { background-attachment: scroll; background-position: center; }
     .hero h1 { font-size: 2.2rem; padding: 0 10px; }
     .hero p { font-size: 1rem; padding: 0 15px; }
     h2 { font-size: 2rem; margin-bottom: 30px; }
-    
     .detail-item { grid-template-columns: 1fr; gap: 30px; direction: ltr !important; }
     .contact-layout { grid-template-columns: 1fr; gap: 50px; }
     .contact-form-wrapper { order: -1; }
     .project-header { padding-top: 100px; }
     .project-header h1 { font-size: 2.2rem; }
-
-    /* Bouton retour en haut plus petit sur mobile */
     #backToTop { width: 40px; height: 40px; font-size: 1rem; bottom: 20px; right: 20px; }
 }
-   /* =========================================
-      14. LIGHTBOX (ZOOM IMAGE)
-      ========================================= */
-   .lightbox {
-       display: none;
-       position: fixed;
-       z-index: 10000;
-       padding-top: 50px;
-       left: 0; top: 0;
-       width: 100%; height: 100%;
-       background-color: rgba(0, 0, 0, 0.9);
-   }
-   
-   .lightbox-content {
-       margin: auto;
-       display: block;
-       width: 80%;
-       max-width: 1000px;
-       max-height: 80vh;
-       object-fit: contain;
-       animation: zoomIn 0.3s;
-   }
-   
-   .lightbox-close {
-       position: absolute;
-       top: 20px; right: 35px;
-       color: #f1f1f1;
-       font-size: 40px;
-       font-weight: bold;
-       transition: 0.3s;
-       cursor: pointer;
-   }
-   
-   .lightbox-close:hover { color: var(--wood); }
-   
-   @keyframes zoomIn {
-       from {transform:scale(0)} to {transform:scale(1)}
-   }
-   
-   /* Curseur loupe sur les images de détail */
-   .detail-image img { cursor: zoom-in; }
+
+/* =========================================
+   14. LIGHTBOX (ZOOM IMAGE) - NOUVEAU
+   ========================================= */
+.lightbox {
+    display: none; position: fixed; z-index: 10000; padding-top: 50px;
+    left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95);
+}
+.lightbox-content {
+    margin: auto; display: block; width: 80%; max-width: 1200px; max-height: 85vh; object-fit: contain;
+    animation: zoomIn 0.3s;
+}
+.lightbox-close {
+    position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
+}
+.lightbox-close:hover { color: var(--wood); }
+@keyframes zoomIn { from {transform:scale(0.8); opacity:0;} to {transform:scale(1); opacity:1;} }
