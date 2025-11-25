@@ -1,0 +1,83 @@
+🌲 Site Internet - TBM (Travaux Bois Marmottan)
+Bienvenue sur le dépôt du site vitrine de l'entreprise TBM - Travaux Bois Marmottan, spécialiste de la menuiserie et de la charpente en milieu montagnard (Savoie).
+
+Ce site a été conçu pour présenter le savoir-faire artisanal, les réalisations et les services de l'entreprise avec une esthétique épurée, moderne et professionnelle ("Style Architecte").
+
+🔗 Voir le site en ligne : https://pebinoh.github.io/travaux-bois-marmottan/
+
+✨ Fonctionnalités
+Design Responsive : Adaptation parfaite sur ordinateurs, tablettes et mobiles (Menu burger, ajustement des images).
+
+Expérience Utilisateur (UX) :
+
+Écran de chargement (Loader) animé.
+
+Navigation fluide entre les projets.
+
+Lightbox pour zoomer sur les photos de détails.
+
+Bouton "Retour en haut" automatique.
+
+Présentation des Services : Pages dédiées pour le Sciage et l'Atelier.
+
+Localisation : Carte interactive propre (Leaflet/OpenStreetMap) sans publicité, centrée sur Villaroger.
+
+Contact : Formulaire de contact fonctionnel relié à Formspree.
+
+SEO & Partage : Optimisation pour le référencement local (JSON-LD) et balises Open Graph pour un affichage propre sur les réseaux sociaux (WhatsApp, Facebook).
+
+Légal : Page de mentions légales conforme RGPD.
+
+🛠️ Technologies Utilisées
+Ce site est un site statique, conçu pour être léger, rapide et hébergé gratuitement.
+
+HTML5 : Structure sémantique.
+
+CSS3 : Mise en page (Grid/Flexbox), animations, parallaxe et design adaptatif.
+
+JavaScript (Vanilla) : Gestion du menu mobile, du loader, de la lightbox et des interactions.
+
+Leaflet.js : Librairie open-source pour la carte interactive.
+
+FontAwesome : Pour les icônes.
+
+Google Fonts : Polices Montserrat et Playfair Display.
+
+📂 Structure du Projet
+Plaintext
+
+/
+├── index.html           # Page d'accueil
+├── style.css            # Feuille de style principale
+├── script.js            # Scripts d'animation et de logique
+├── contact.html         # Page de contact avec carte
+├── mentions-legales.html# Page juridique
+│
+├── baptieu.html         # Détail Projet 1
+├── noyerai.html         # Détail Projet 2
+├── fenetre.html         # Détail Projet 3
+│
+├── sciage.html          # Page Service Sciage
+├── atelier.html         # Page Service Atelier
+│
+├── robots.txt           # Instructions pour Google
+├── sitemap.xml          # Plan du site pour Google
+│
+└── [Images .jpg]        # Images du site (mazure.jpg, logo_tbm.jpg, etc.)
+🚀 Comment modifier le site
+1. Changer les images
+Remplacer simplement les fichiers .jpg à la racine par de nouvelles images portant exactement le même nom. Pensez à compresser les images avant (via TinyJPG par exemple) pour garder le site rapide.
+
+2. Configurer le formulaire de contact
+Dans le fichier contact.html (et les autres si le formulaire y est présent), modifier la ligne suivante avec votre propre ID Formspree :
+
+HTML
+
+<form action="https://formspree.io/f/VOTRE_NOUVEL_ID" method="POST">
+3. Mettre à jour les coordonnées
+Les informations (téléphone, adresse, email) sont présentes dans le fichier contact.html et dans le <footer> de chaque page HTML. Il faut les modifier manuellement sur chaque page.
+
+👤 Auteur
+Conception et Réalisation : Paul-Émile BEZAULT
+
+© 2025 TBM - Travaux Bois Marmottan. Tous droits réservés.
