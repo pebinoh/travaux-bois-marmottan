@@ -1,30 +1,30 @@
-# 🌲 Site Internet - TBM (Travaux Bois Marmottan)
+# Site Internet - TBM (Travaux Bois Marmottan)
 
 Bienvenue sur le dépôt du site vitrine de l'entreprise **TBM - Travaux Bois Marmottan**, spécialiste de la menuiserie et de la charpente en milieu montagnard (Savoie).
 
 Ce site a été conçu pour présenter le savoir-faire artisanal, les réalisations et les services de l'entreprise avec une esthétique épurée, moderne et professionnelle ("Style Architecte").
 
-### 🔗 [Voir le site en ligne ici](https://pebinoh.github.io/travaux-bois-marmottan/)
+### [Voir le site en ligne ici](https://pebinoh.github.io/travaux-bois-marmottan/)
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-* 📱 **Design Responsive :** Adaptation parfaite sur ordinateurs, tablettes et mobiles (Menu burger, ajustement des images).
-* 🎨 **Expérience Utilisateur (UX) :**
+* **Design Responsive :** Adaptation parfaite sur ordinateurs, tablettes et mobiles (Menu burger, ajustement des images).
+* **Expérience Utilisateur (UX) :**
     * Écran de chargement (Loader) animé.
     * Navigation fluides entre les projets.
     * **Lightbox** pour zoomer sur les photos de détails.
     * Bouton "Retour en haut" automatique.
-* 🛠️ **Présentation des Services :** Pages dédiées pour le Sciage et l'Atelier.
-* 📍 **Localisation :** Carte interactive propre (Leaflet/OpenStreetMap) sans publicité, centrée sur Villaroger.
-* ✉️ **Contact :** Formulaire de contact fonctionnel relié à Formspree.
-* 🚀 **SEO & Partage :** Optimisation pour le référencement local (JSON-LD) et balises Open Graph pour un affichage propre sur les réseaux sociaux (WhatsApp, Facebook).
-* ⚖️ **Légal :** Page de mentions légales conforme RGPD.
+* **Présentation des Services :** Pages dédiées pour le Sciage et l'Atelier.
+* **Localisation :** Carte interactive propre (Leaflet/OpenStreetMap) sans publicité, centrée sur Villaroger.
+* **Contact :** Formulaire de contact fonctionnel relié à Formspree.
+* **SEO & Partage :** Optimisation pour le référencement local (JSON-LD) et balises Open Graph pour un affichage propre sur les réseaux sociaux (WhatsApp, Facebook).
+* **Légal :** Page de mentions légales conforme RGPD.
 
 ---
 
-## 🛠️ Technologies Utilisées
+## Technologies Utilisées
 
 Ce site est un **site statique**, conçu pour être léger, rapide et hébergé gratuitement.
 
@@ -37,7 +37,7 @@ Ce site est un **site statique**, conçu pour être léger, rapide et hébergé 
 
 ---
 
-## 📂 Structure du Projet
+## Structure du Projet
 
 ```text
 /
